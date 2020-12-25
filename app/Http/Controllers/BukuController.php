@@ -36,7 +36,17 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateDataBok = $request->validate([
+            'nama' => 'required',
+            'judul' => 'required',
+            'pengarang' => 'required',
+            'penerbit' => 'required',
+            'tahun' => 'required',
+            'jumlah' => 'required',
+        ]);
+        //$bukus
+        Buku::create($validateDataBok);
+        return redirect()->route('buku_index');
     }
 
     /**
@@ -82,5 +92,7 @@ class BukuController extends Controller
     public function destroy($id)
     {
         //
+        Buku::where('id', $id)->delete();
+        return back()->with('success','hapus data sukses');
     }
 }
