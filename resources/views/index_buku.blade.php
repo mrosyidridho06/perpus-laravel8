@@ -9,40 +9,41 @@
         <title>Perpustakaan</title>
     </head>
     <body>
-        <div class="container mx-auto">
-        <h1 class="text-5x1 font-bold center">Buku</h1>
-        <a href="{{route('buku_create')}}">Input buku</a> 
-        <table class="table-auto border-2">
-        <thead>
-            <tr class="border-4">
-            <th class="border-2">No</th>
-            <th class="border-2">Nama</th>
-            <th class="border-2">Judul</th>
-            <th class="border-2">Pengarang</th>
-            <th class="border-2">Penerbit</th>
-            <th class="border-2">Tahun</th>
-            <th class="border-2">Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <tr class="border-2">
-            @foreach ($bukus as $buku)
-            <tr class="border-2">
-                <td class="border-2">{{$buku->id}}</td>
-                <td class="border-2">{{$buku->nama}}</td>
-                <td class="border-2">{{$buku->judul}}</td>
-                <td class="border-2">{{$buku->pengarang}}</td>
-                <td class="border-2">{{$buku->penerbit}}</td>
-                <td class="border-2">{{$buku->tahun}}</td>
-                <td class="border-2"><a href="{{route('buku_edit', $buku->id)}}">Edit <class="border-2"><a href="{{route('buku_delete', $buku->id)}}">Delete</td>
-            </tr>
-            @endforeach
-            </tr>
-        </tbody>
-        </table>
-        <span>{{ $bukus->links() }}</span>
-        
+        <div class="container mx-auto px-4 md:py-4">
+            <h1 class="text-5x1 font-bold text-center">Buku</h1>
+            <div class="center md:static">
+                <a href="{{route('buku_create')}}">Input buku</a>
+            </div> 
+            <table class=" border-2 table-fixed obcject-center">
+            <thead>
+                <tr class="border-4">
+                <th class="border-2">No</th>
+                <th class="border-2">Nama</th>
+                <th class="border-2">Judul</th>
+                <th class="border-2">Pengarang</th>
+                <th class="border-2">Penerbit</th>
+                <th class="border-2">Tahun</th>
+                <th class="border-2">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <tr class="border-2">
+                @foreach ($bukus as $buku)
+                <tr class="border-2">
+                    <td class="border-2">{{$buku->id}}</td>
+                    <td class="border-2">{{$buku->nama}}</td>
+                    <td class="border-2">{{$buku->judul}}</td>
+                    <td class="border-2">{{$buku->pengarang}}</td>
+                    <td class="border-2">{{$buku->penerbit}}</td>
+                    <td class="border-2">{{$buku->tahun}}</td>
+                    <td class="border-2"><a href="{{route('buku_edit', $buku->id)}}">Edit <class="border-2"><a href="{{route('buku_delete', $buku->id)}}">Delete</td>
+                </tr>
+                @endforeach
+                </tr>
+            </tbody>
+            </table>
+            <span>{{ $bukus->links() }}</span>
         </div>
     </body>
 </html>
