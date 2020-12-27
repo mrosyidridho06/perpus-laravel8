@@ -7,7 +7,7 @@
 
 <body>
 <!-- component -->
-<form method="POST" action="{{('buku_store')}}">
+<form method="POST" action="{{route('buku_update',$edbuk->id)}}">
   @csrf
   <div class="max-w-2xl bg-white py-10 px-5 m-auto w-full mt-10">
 
@@ -16,27 +16,27 @@
     </div>
     <div class="grid grid-cols-2 gap-4 max-w-xl m-auto">
       <div class="col-span-2">
-        <input type="text" name="nama" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Nama"/>
+        <input type="text" name="nama" value="{{$edbuk->nama}}" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Nama"/>
       </div>
 
       <div class="col-span-2">
-        <input type="text" name="judul" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Judul"/>
+        <input type="text" name="judul" value="{{$edbuk->judul}}" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Judul"/>
       </div>
 
       <div class="col-span-2">
-        <input type="text" name="pengarang" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Pengarang"/>
+        <input type="text" name="pengarang" value="{{$edbuk->pengarang}}" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Pengarang"/>
       </div>
 
       <div class="col-span-2">
-        <input type="text" name="penerbit" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Penerbit"/>
+        <input type="text" name="penerbit" value="{{$edbuk->penerbit}}" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Penerbit"/>
       </div>
 
       <div class="col-span-2">
-        <input type="text" name="tahun" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Tahun"/>
+        <input type="text" name="tahun" value="{{$edbuk->tahun}}" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Tahun"/>
       </div>
 
       <div class="col-span-2">
-        <input type="text" name="jumlah" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Jumlah"/>
+        <input type="text" name="jumlah" value="{{$edbuk->jumlah}}" class="border-solid border-gray-400 border-2 p-3 md:text-xl w-full" placeholder="Jumlah"/>
       </div>
 
       <div class="col-span-2 text-right">

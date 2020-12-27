@@ -14,7 +14,7 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $bukus = Buku::all();
+        $bukus = Buku::paginate(20);
         return view('index_buku',['bukus' => $bukus]);
     }
 
@@ -69,6 +69,8 @@ class BukuController extends Controller
     public function edit($id)
     {
         //
+        $edbuk=Buku::findOrFail($id);
+        return view('action.editbuku', compact('edbuk'));
     }
 
     /**
@@ -81,6 +83,17 @@ class BukuController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $edbuk=Buku::findOrFail($id);
+        $edbuk->update($request->all());
+        // $request->validate([
+        //     'nama' => 'required',
+        //     'judul' => 'required',
+        //     'pengarang' => 'required',
+        //     'penerbit' => 'required',
+        //     'tahun' => 'required',
+        //     'jumlah' => 'required',
+        // ]);
+        return redirect()->route('buku_index');
     }
 
     /**

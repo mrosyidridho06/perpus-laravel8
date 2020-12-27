@@ -22,3 +22,5 @@ Route::get('/buku', [BukuController::class, 'index'])->name('buku_index');;
 Route::get('/buku_create', [BukuController::class, 'create'])->name('buku_create');
 Route::post('/buku_store', [BukuController::class, 'store'])->name('buku_store');
 Route::get('/buku_delete/{id}', [BukuController::class, 'destroy'])->name('buku_delete');
+Route::get('/action/buku_edit/{id}', [BukuController::class, 'edit'])->name('buku_edit');
+Route::post('/buku_update/{id}', [BukuController::class, 'update'])->name('buku_update');
