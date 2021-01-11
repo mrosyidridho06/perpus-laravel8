@@ -7,6 +7,11 @@
 
 <body>
 <!-- component -->
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 <form method="POST" action="{{('buku_store')}}">
   @csrf
   <div class="max-w-2xl bg-white py-10 px-5 m-auto w-full mt-10">

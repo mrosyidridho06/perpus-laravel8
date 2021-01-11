@@ -10,11 +10,11 @@
     </head>
     <body>
         <div class="container mx-auto px-4 md:py-4">
-            <h1 class="text-5x1 font-bold text-center">Buku</h1>
+            <h1 class="text-5x1 font-bold">Buku</h1>
             <div class="center md:static">
                 <a href="{{route('buku_create')}}">Input buku</a>
             </div> 
-            <table class=" border-2 table-fixed obcject-center">
+            <table class="shadow-lg bg-white border-2 table-fixed">
             <thead>
                 <tr class="border-4">
                 <th class="border-2">No</th>
